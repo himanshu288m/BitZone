@@ -22,6 +22,8 @@ public class StaffDashboard extends AppCompatActivity
 
     private ConstraintLayout constraintLayout;
 
+    String email;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -113,24 +115,23 @@ public class StaffDashboard extends AppCompatActivity
 
         } else if (id == R.id.nav_assignments) {
 
-            Intent intent = new Intent(StaffDashboard.this,StaffAddLink.class);
-            startActivity(intent);
-
         } else if (id == R.id.nav_share) {
 
         } else if (id == R.id.nav_send) {
 
         }
 
+        else if (id == R.id.nav_staff_circular) {
+            email = getIntent().getStringExtra("email");
+
+            Intent intent = new Intent(StaffDashboard.this,Circular.class);
+                intent.putExtra("email",email);
+            startActivity(intent);
+
+        }
+
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
-    }
-
-    public  void logout(){
-        FirebaseAuth.getInstance().signOut();
-        Intent intent = new Intent(StaffDashboard.this,MainActivity.class);
-        startActivity(intent);
-        finish();
     }
 }

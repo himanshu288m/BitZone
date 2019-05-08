@@ -19,7 +19,11 @@
         <item
             android:id="@+id/nav_student_assignment"
             android:icon="@drawable/assignment"
-            android:title="Important Links" />
+            android:title="Assignments" />
+        <item
+            android:id="@+id/nav_student_circular"
+            android:icon="@drawable/ic_college_circular"
+            android:title="Circular" />
     </group>
 
     <item android:title="Communicate">

@@ -166,6 +166,7 @@ public class LoginActivity extends AppCompatActivity implements AdapterView.OnIt
                                 pdlg.cancel();
                                 Toast.makeText(LoginActivity.this, "Login Succesfully", Toast.LENGTH_SHORT).show();
                                 Intent intent = new Intent(LoginActivity.this, StaffDashboard.class);
+                                intent.putExtra("email",emailv);
                                 startActivity(intent);
                             }
                             else{
